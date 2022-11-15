@@ -1,1 +1,2 @@
-# FinalProject
+# FinalProject DIgital Terracatta
+# Gabe Carlson
