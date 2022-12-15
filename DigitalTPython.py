@@ -5,18 +5,6 @@ def RollFunction():
     Roll = random.randint(1,6)
     return Roll
 
-#def AttackUnitsLoss():
-    #AttackUnitsLost = AttackUnits - 1
-    #print("Attack Units: ")
-    #print(AttackUnitsLost)
-    #return AttackUnitsLost
-
-#def DefenseUnitsLoss():
-    #DefenseUnitsLost = DefenseUnits - 1
-    #print("Defense Units: ") 
-    #print(DefenseUnitsLost)
-    #return DefenseUnitsLost
-
 StringNumberList = [str(x) for x in range(1000 + 1)]
 
 def CheckAnswerInt(IntAnswer):
@@ -38,7 +26,6 @@ def CheckYesNo(Answer):
     
     if Answer in YesList:
         return YesAnswer
-
     elif Answer in NoList:
         return NoAnswer
 
@@ -70,7 +57,7 @@ DefenseUnits = CheckAnswerInt(str(input("Enter number of units defending:  ")))
 Choice = CheckYesNo(str(input("Would you like to see each individual roll? YES/NO: ")))
 
 
-while AttackUnits > 0 and DefenseUnits > 0:
+while True:
 
     AttackRolls3 = (RollFunction(), RollFunction(), RollFunction())
     AttackRolls2 = (RollFunction(), RollFunction())
@@ -89,23 +76,19 @@ while AttackUnits > 0 and DefenseUnits > 0:
         print(Defense)
 
         if Attack[0] > Defense[0]:
-            #DefenseUnitsLoss()
             DefenseUnits = DefenseUnits - 1
             print("\nDefense Units: ") 
             print(DefenseUnits)
         else:
-            #AttackUnitsLoss()
             AttackUnits = AttackUnits - 1
             print("\nAttack Units: ")
             print(AttackUnits)
             
         if Attack[1] > Defense[1]:
-            #DefenseUnitsLoss()
             DefenseUnits = DefenseUnits - 1
             print("\nDefense Units: ") 
             print(DefenseUnits)        
         else:
-            #AttackUnitsLoss()
             AttackUnits = AttackUnits - 1
             print("\nAttack Units: ")
             print(AttackUnits)
@@ -120,23 +103,19 @@ while AttackUnits > 0 and DefenseUnits > 0:
         print(Defense)
 
         if Attack[0] > Defense[0]:
-            #DefenseUnitsLoss()
             DefenseUnits = DefenseUnits - 1
             print("\nDefense Units: ") 
             print(DefenseUnits)
         else:
-            #AttackUnitsLoss()
             AttackUnits = AttackUnits - 1
             print("\nAttack Units: ")
             print(AttackUnits)
             
         if Attack[1] > Defense[1]:
-            #DefenseUnitsLoss()
             DefenseUnits = DefenseUnits - 1
             print("\nDefense Units: ") 
             print(DefenseUnits)        
         else:
-            #AttackUnitsLoss()
             AttackUnits = AttackUnits - 1
             print("\nAttack Units: ")
             print(AttackUnits)
@@ -151,12 +130,10 @@ while AttackUnits > 0 and DefenseUnits > 0:
         print(Defense)
 
         if Attack > Defense[0]:
-            #DefenseUnitsLoss()
             DefenseUnits = DefenseUnits - 1
             print("\nDefense Units: ") 
             print(DefenseUnits)
         else:
-            #AttackUnitsLoss()
             AttackUnits = AttackUnits - 1
             print("\nAttack Units: ")
             print(AttackUnits)
@@ -172,12 +149,10 @@ while AttackUnits > 0 and DefenseUnits > 0:
         print(DefenseRolls1)
 
         if Attack[0] > Defense:
-            #DefenseUnitsLoss()
             DefenseUnits = DefenseUnits - 1
             print("\nDefense Units: ") 
             print(DefenseUnits)
         else:
-            #AttackUnitsLoss()
             AttackUnits = AttackUnits - 1
             print("\nAttack Units: ")
             print(AttackUnits)
@@ -192,12 +167,10 @@ while AttackUnits > 0 and DefenseUnits > 0:
         print(DefenseRolls1)
 
         if Attack[0] > Defense:
-            #DefenseUnitsLoss()
             DefenseUnits = DefenseUnits - 1
             print("\nDefense Units: ") 
             print(DefenseUnits)
         else:
-            #AttackUnitsLoss()
             AttackUnits = AttackUnits - 1
             print("\nAttack Units: ")
             print(AttackUnits)
@@ -212,26 +185,29 @@ while AttackUnits > 0 and DefenseUnits > 0:
         print(DefenseRolls1)
 
         if Attack > Defense:
-            #DefenseUnitsLoss()
             DefenseUnits = DefenseUnits - 1
             print("\nDefense Units: ") 
             print(DefenseUnits)
         else:
-            #AttackUnitsLoss()
             AttackUnits = AttackUnits - 1
             print("\nAttack Units: ")
             print(AttackUnits)
-
-    if Choice == "Yes":
+    
+    if AttackUnits > 0 and DefenseUnits > 0 and Choice == "YES":
         EveryRoll = CheckYesNo(str(input("Would you like to roll again? YES/NO: ")))
-        if EveryRoll == "Yes":
+        if EveryRoll == "YES":
             continue
-        elif EveryRoll == "No":
-            break
-    elif Choice == "No":
+        elif EveryRoll == "NO":
+            print("\nBattle Over!")
+            print("\nAttack Unit: " + str(AttackUnits))
+            print("Defense Units: " + str(DefenseUnits))
+            print("")
             break
 
-if AttackUnits == 0:
-    print("\nThe Defense has won!\n")
-elif DefenseUnits == 0:
-    print("\nThe Attack has won!\n")
+    if AttackUnits == 0:
+        print("\nThe Defense has won!\n")
+        break
+
+    elif DefenseUnits == 0:
+        print("\nThe Attack has won!\n")
+        break
