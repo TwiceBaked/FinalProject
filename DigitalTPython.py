@@ -68,130 +68,101 @@ while True:
 
     if AttackUnits > 2 and DefenseUnits > 1:
         Attack = sorted(AttackRolls3, reverse = True)
-        print('\nAttack Roll')
-        print(Attack)
+        print('\nAttack Roll: ' + str(Attack))
 
         Defense = sorted(DefenseRolls2, reverse = True)
-        print('\nDefense Roll')
-        print(Defense)
+        print('\nDefense Roll: ' + str(Defense))
 
         if Attack[0] > Defense[0]:
             DefenseUnits = DefenseUnits - 1
-            print("\nDefense Units: ") 
-            print(DefenseUnits)
+            print("\nDefense Units Remaining: " + str(DefenseUnits))
         else:
             AttackUnits = AttackUnits - 1
-            print("\nAttack Units: ")
-            print(AttackUnits)
+            print("\nAttack Units Remaining: " + str(AttackUnits))
             
         if Attack[1] > Defense[1]:
             DefenseUnits = DefenseUnits - 1
-            print("\nDefense Units: ") 
-            print(DefenseUnits)        
+            print("\nDefense Units Remaining: " + str(DefenseUnits)) 
         else:
             AttackUnits = AttackUnits - 1
-            print("\nAttack Units: ")
-            print(AttackUnits)
+            print("\nAttack Units Remaining: " + str(AttackUnits))
 
     elif AttackUnits == 2 and DefenseUnits > 1:
         Attack = sorted(AttackRolls2, reverse = True)
-        print('\nAttack Roll')
-        print(Attack)
+        print('\nAttack Roll: ' + str(Attack))
 
         Defense = sorted(DefenseRolls2, reverse = True)
-        print('\nDefense Roll')
-        print(Defense)
+        print('\nDefense Roll: ' + str(Defense))
 
         if Attack[0] > Defense[0]:
             DefenseUnits = DefenseUnits - 1
-            print("\nDefense Units: ") 
-            print(DefenseUnits)
+            print("\nDefense Units Remaining: " + str(DefenseUnits)) 
         else:
             AttackUnits = AttackUnits - 1
-            print("\nAttack Units: ")
-            print(AttackUnits)
+            print("\nAttack Units Remaining: " + str(AttackUnits))
             
         if Attack[1] > Defense[1]:
             DefenseUnits = DefenseUnits - 1
-            print("\nDefense Units: ") 
-            print(DefenseUnits)        
+            print("\nDefense Units Remaining: " + str(DefenseUnits))
         else:
             AttackUnits = AttackUnits - 1
-            print("\nAttack Units: ")
-            print(AttackUnits)
+            print("\nAttack Units Remaining: " + str(AttackUnits))
 
     elif AttackUnits == 1 and DefenseUnits > 1:
         Attack = AttackRolls1
-        print('\nAttack Roll')
-        print(AttackRolls1)
+        print('\nAttack Roll: ' + str(Attack))
 
         Defense = sorted(DefenseRolls2, reverse = True)
-        print('\nDefense Roll')
-        print(Defense)
+        print('\nDefense Roll: ' + str(Defense))
 
         if Attack > Defense[0]:
             DefenseUnits = DefenseUnits - 1
-            print("\nDefense Units: ") 
-            print(DefenseUnits)
+            print("\nDefense Units Remaining: " + str(DefenseUnits))
         else:
             AttackUnits = AttackUnits - 1
-            print("\nAttack Units: ")
-            print(AttackUnits)
-            
+            print("\nAttack Units Remaining: " + str(AttackUnits))
 
     elif AttackUnits > 2 and DefenseUnits == 1:
         Attack = sorted(AttackRolls3, reverse = True)
-        print('\nAttack Roll')
-        print(Attack)
+        print('\nAttack Roll: ' + str(Attack))
 
         Defense = DefenseRolls1
-        print('\nDefense Roll')
-        print(DefenseRolls1)
+        print('\nDefense Roll: ' + str(Defense))
 
         if Attack[0] > Defense:
             DefenseUnits = DefenseUnits - 1
-            print("\nDefense Units: ") 
-            print(DefenseUnits)
+            print("\nDefense Units Remaining: " + str(DefenseUnits))
         else:
             AttackUnits = AttackUnits - 1
-            print("\nAttack Units: ")
-            print(AttackUnits)
+            print("\nAttack Units Remaining: " + str(AttackUnits))
 
     elif AttackUnits == 2 and DefenseUnits == 1:
         Attack = sorted(AttackRolls2, reverse = True)
-        print('\nAttack Roll')
-        print(Attack)
+        print('\nAttack Roll: ' + str(Attack))
 
         Defense = DefenseRolls1
-        print('\nDefense Roll')
-        print(DefenseRolls1)
+        print('\nDefense Roll: ' + str(Defense))
 
         if Attack[0] > Defense:
             DefenseUnits = DefenseUnits - 1
-            print("\nDefense Units: ") 
-            print(DefenseUnits)
+            print("\nDefense Units Remaining: " + str(DefenseUnits))
         else:
             AttackUnits = AttackUnits - 1
-            print("\nAttack Units: ")
-            print(AttackUnits)
+            print("\nAttack Units Remaining: " + str(AttackUnits))
 
     elif AttackUnits == 1 and DefenseUnits == 1:
         Attack = AttackRolls1
-        print('\nAttack Roll')
-        print(AttackRolls1)
+        print('\nAttack Roll: ' + str(Attack))
 
         Defense = DefenseRolls1
-        print('\nDefense Roll')
-        print(DefenseRolls1)
+        print('\nDefense Roll: ' + str(Defense))
 
         if Attack > Defense:
             DefenseUnits = DefenseUnits - 1
-            print("\nDefense Units: ") 
-            print(DefenseUnits)
+            print("\nDefense Units Remaining: " + str(DefenseUnits)) 
         else:
             AttackUnits = AttackUnits - 1
-            print("\nAttack Units: ")
-            print(AttackUnits)
+            print("\nAttack Units Remaining: " + str(AttackUnits))
     
     if AttackUnits > 0 and DefenseUnits > 0 and Choice == "YES":
         EveryRoll = CheckYesNo(str(input("Would you like to roll again? YES/NO: ")))
